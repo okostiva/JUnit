@@ -59,14 +59,6 @@ public class Envelope {
 	
 	public int getTotalCents()
 	{
-		int totalCents = 0;
-		
-		totalCents += 100*this.dollars;
-		totalCents += 25*this.quarters;
-		totalCents += 10*this.dimes;
-		totalCents += 5*this.nickels;
-		totalCents += 1*this.pennies;
-		
-		return totalCents;
+		return getDollars()*100 + getQuarters()*25 + getDimes()*10 + getNickels()*5 + getPennies();
 	}
 }

@@ -37,6 +37,21 @@ public class testEnvelope {
 		actual = new Envelope(0,2,4,6,8).getTotalCents();
 		Assert.assertEquals(expected, actual);
 		
+		Envelope e = new Envelope(0, 2, 0, 0, 0);
+		expected = 50;
+		actual = e.getTotalCents();
+		Assert.assertEquals(expected, actual);
+
+		Envelope b = new Envelope(3, 1, 1, 1, 1);
+		expected = 341;
+		actual = b.getTotalCents();
+		Assert.assertEquals(expected, actual);
+		
+		Envelope c = new Envelope(1, 2, 3, 4, 5);
+		expected = 205;
+		actual = c.getTotalCents();
+		Assert.assertEquals(expected, actual);
+		
 	}
 
 }

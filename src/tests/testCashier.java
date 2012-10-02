@@ -103,6 +103,19 @@ public class testCashier {
 		}
 	}
 	
+	@Test
+	public void testMakeChange6() {
+		try {
+			Cashier cashier = new Cashier();
+			Envelope e = new Envelope(10, 0, 0, 0, 0);
+			Envelope expected = new Envelope(0, 0, 0, 0, 1);
+			Envelope actual = cashier.makeChange(e, 9, 99);
+			Assert.assertEquals(expected.getTotalCents(), actual.getTotalCents());
+		} catch (NegativeBalanceException ex) {
+			System.out.println(ex);
+		}
+	}
+	
 	@Test (expected = NegativeBalanceException.class)
 	public void testMakeChangeNegative() throws NegativeBalanceException
 	{
